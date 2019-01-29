@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 namespace Northwind.DataLayer.Infrastructure
 {
     /// <summary>
-    /// inspired by:
+    /// This class is used in Visual Studio during adding new controller. 
     /// </summary>
     public abstract class DesignTimeDbContextFactoryBase<TContext> : IDesignTimeDbContextFactory<TContext> where TContext : DbContext
     {
@@ -37,12 +37,12 @@ namespace Northwind.DataLayer.Infrastructure
                 .AddEnvironmentVariables()
                 .Build();
 
-            var connstr = config.GetConnectionString("Default");
+            var connstr = config.GetConnectionString("NorthwindDatabase");
 
             if (string.IsNullOrWhiteSpace(connstr))
             {
                 throw new InvalidOperationException(
-                    "Could not find a connection string named 'Default'.");
+                    "Could not find a connection string named 'NorthwindDatabase'.");
             }
 
             return Create(connstr);
