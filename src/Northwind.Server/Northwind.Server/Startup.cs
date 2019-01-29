@@ -6,10 +6,12 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Northwind.DataLayer.Entities;
 
 namespace Northwind.Server
 {
@@ -25,6 +27,13 @@ namespace Northwind.Server
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Add DbContext using SQL Server Provider
+            services.AddDbContext<NorthwindContext>(options =>
+            {
+                var connectionString = Configuration.GetConnectionString("NorthwindDatabase");
+                options.UseSqlServer(connectionString);
+            });
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
