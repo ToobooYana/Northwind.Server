@@ -5,6 +5,35 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Configurations\CustomerConfiguration.cs" />
+    <Compile Remove="Configurations\EmployeeConfiguration.cs" />
+    <Compile Remove="Configurations\EmployeeTerritoryConfiguration.cs" />
+    <Compile Remove="Configurations\OrderConfiguration.cs" />
+    <Compile Remove="Configurations\OrderDetailConfiguration.cs" />
+    <Compile Remove="Configurations\RegionConfiguration.cs" />
+    <Compile Remove="Configurations\ShipperConfiguration.cs" />
+    <Compile Remove="Configurations\TerritoryConfiguration.cs" />
+    <Compile Remove="Entities\CategoryLang.cs" />
+    <Compile Remove="Entities\Customer.cs" />
+    <Compile Remove="Entities\CustomerCustomerDemo.cs" />
+    <Compile Remove="Entities\CustomerDemographics.cs" />
+    <Compile Remove="Entities\CustomerDetails.cs" />
+    <Compile Remove="Entities\CustomerRepresentatives.cs" />
+    <Compile Remove="Entities\DragDropSample.cs" />
+    <Compile Remove="Entities\Employee.cs" />
+    <Compile Remove="Entities\EmployeeTerritory.cs" />
+    <Compile Remove="Entities\Notes.cs" />
+    <Compile Remove="Entities\Order.cs" />
+    <Compile Remove="Entities\OrderDetail.cs" />
+    <Compile Remove="Entities\ProductLang.cs" />
+    <Compile Remove="Entities\ProductLog.cs" />
+    <Compile Remove="Entities\Region.cs" />
+    <Compile Remove="Entities\Shipper.cs" />
+    <Compile Remove="Entities\Territory.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EfCore.InMemoryHelpers" Version="1.4.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="2.2.0" />

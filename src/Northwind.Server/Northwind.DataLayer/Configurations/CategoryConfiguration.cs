@@ -8,12 +8,12 @@ namespace Northwind.DataLayer.Configurations
     {
         public void Configure(EntityTypeBuilder<Category> builder)
         {
-            builder.HasKey(e => e.CategoryId);
+            builder.HasKey(e => e.Id).HasName("CategoryID");
 
             builder.HasIndex(e => e.CategoryName)
                 .HasName("CategoryName");
 
-            builder.Property(e => e.CategoryId).HasColumnName("CategoryID");
+            builder.Property(e => e.Id).HasColumnName("CategoryID");
 
             builder.Property(e => e.CategoryName)
                 .IsRequired()
@@ -21,7 +21,7 @@ namespace Northwind.DataLayer.Configurations
 
             builder.Property(e => e.Description).HasColumnType("ntext");
 
-            builder.Property(e => e.Picture).HasColumnType("image");
+            //builder.Property(e => e.Picture).HasColumnType("image");
         }
     }
 }
