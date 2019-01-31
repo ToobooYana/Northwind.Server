@@ -34,7 +34,7 @@ namespace Northwind.Server.Infrastructure
                 ),
                 resolve: context => resolver
                     .Resolve<IMutationStrategy<Category>>()
-                    .Execute(context, ctx, "category"));
+                    .Execute(context, ctx, entity => entity.Id, "category"));
         }
     }
 }
